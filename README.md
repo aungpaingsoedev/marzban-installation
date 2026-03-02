@@ -1,47 +1,49 @@
-Okay, I understand you'd like me to create a GitHub README.md based on the information you provided about Marzban.
-
-Here's a draft of the README.md documentation:
-
 ```markdown
-# 🚀 Marzban: Unified GUI Censorship Resistant Solution
+# 🚀 Marzban: Censor-ခံနိုင်ရည်ရှိသည့် VPN စီမံခန့်ခွဲမှုစနစ် (GUI)
 
-[Burmese Description]
-Marzban သည် Xray-core ကို အခြေခံထားပြီး VPN အသုံးပြုသူများကို စနစ်တကျ စီမံခန့်ခွဲနိုင်ရန် ဖန်တီးထားသည့် ခေတ်မီပြီး အားကောင်းသော Dashboard တစ်ခု ဖြစ်ပါသည်။ ဤ Repository သည် တစ်ဦးတစ်ယောက်ချင်းဖြစ်စေ၊ အဖွဲ့အစည်းလိုက်ဖြစ်စေ VPN Service ပေးလိုသူများအတွက် လွယ်ကူမြန်ဆန်သော Installation နှင့် Management ကို ပံ့ပိုးပေးပါသည်။
+## မိတ်ဆက်
 
-## English Description
-Marzban is a modern and powerful Dashboard built on Xray-core, designed to systematically manage VPN users. This repository provides quick and easy installation and management for individuals or organizations looking to offer VPN services.
+Marzban သည် Xray-core ကို အခြေခံထားပြီး VPN အသုံးပြုသူများကို စနစ်တကျ စီမံခန့်ခွဲနိုင်ရန် ဖန်တီးထားသည့် ခေတ်မီပြီး အားကောင်းသော Dashboard တစ်ခု ဖြစ်ပါသည်။ ဤစနစ်သည် တစ်ဦးချင်းဖြစ်စေ၊ အဖွဲ့အစည်းလိုက်ဖြစ်စေ VPN Service ပေးလိုသူများအတွက် လွယ်ကူမြန်ဆန်သော တပ်ဆင်မှုနှင့် စီမံခန့်ခွဲမှုကို ပံ့ပိုးပေးပါသည်။ Censor-ခံနိုင်ရည်ရှိသည့် ဝန်ဆောင်မှုများကို အသုံးပြုသူများဆီသို့ လွယ်ကူစွာ ပေးစွမ်းနိုင်သော ဖြေရှင်းချက်တစ်ခုလည်း ဖြစ်ပါသည်။
 
-## Quick Setup
+## အမြန်တပ်ဆင်နည်း (Quick Setup)
 
-Follow these steps to quickly set up Marzban:
+Marzban ကို လျင်မြန်စွာ စတင်အသုံးပြုနိုင်ရန် အောက်ပါအဆင့်များကို လိုက်နာပါ။
 
-### 1. Update and Upgrade System
+### ၁။ System Update ပြုလုပ်ခြင်း
+
+ပထမဆုံးအနေဖြင့် သင့် Server ကို Update နှင့် Upgrade ပြုလုပ်ပါ။
 ```bash
 sudo apt update && sudo apt upgrade -y
 ```
 
-### 2. Install Marzban
+### ၂။ Marzban တပ်ဆင်ခြင်း
+
+အောက်ပါ Command ဖြင့် Marzban ကို တပ်ဆင်ပါ။
 ```bash
 sudo bash -c "$(curl -sL https://github.com/Gozargah/Marzban-scripts/raw/master/marzban.sh)" @ install
 ```
 
-### 3. Install Certbot (for SSL)
+### ၃။ Certbot (SSL အတွက်) တပ်ဆင်ခြင်း
+
+SSL လက်မှတ်များရယူရန်အတွက် Certbot ကို တပ်ဆင်ပါ။
 ```bash
 sudo apt install certbot -y
 ```
 
-### 4. Obtain SSL Certificate
-Replace `vpn.yourdomain.com` with your actual domain.
+### ၄။ SSL လက်မှတ် ရယူခြင်း
+
+သင့် VPN Server ၏ Domain Name (ဥပမာ: `vpn.yourdomain.com`) ကို အသုံးပြု၍ SSL လက်မှတ်ရယူပါ။ `vpn.yourdomain.com` နေရာတွင် သင့်ကိုယ်ပိုင် Domain Name ကို အစားထိုးထည့်သွင်းပါ။
 ```bash
 sudo certbot certonly --standalone -d vpn.yourdomain.com
 ```
 
-### 5. Configure Marzban Environment Variables
-Edit the `.env` file to configure SSL certificate paths.
+### ၅။ Marzban Environment Variables ချိန်ညှိခြင်း
+
+SSL လက်မှတ်လမ်းကြောင်းများကို ချိန်ညှိရန်အတွက် `/opt/marzban/.env` ဖိုင်ကို ပြင်ဆင်ပါ။
 ```bash
 nano /opt/marzban/.env
 ```
-Add or modify the following lines in the `.env` file:
+`.env` ဖိုင်အတွင်း အောက်ပါလိုင်းများကို ထည့်သွင်း (သို့မဟုတ်) ပြင်ဆင်ပါ။
 ```
 UVICORN_HOST = "0.0.0.0"
 UVICORN_PORT = 8000
@@ -49,29 +51,30 @@ UVICORN_SSL_CERTFILE = "/etc/letsencrypt/live/vpn.yourdomain.com/fullchain.pem"
 UVICORN_SSL_KEYFILE = "/etc/letsencrypt/live/vpn.yourdomain.com/privkey.pem"
 ```
 
-### 6. Set Permissions for Let's Encrypt Certificates
+### ၆။ Let's Encrypt လက်မှတ်များအတွက် Permissions သတ်မှတ်ခြင်း
+
+Let's Encrypt လက်မှတ်ဖိုင်များ၏ Permissions များကို အောက်ပါအတိုင်း သတ်မှတ်ပေးပါ။
 ```bash
 chmod -R 755 /etc/letsencrypt/live/
 chmod -R 755 /etc/letsencrypt/archive/
 ```
 
-### 7. Update Docker Compose Configuration
-Edit the `docker-compose.yml` file to mount the Let's Encrypt volume.
+### ၇။ Docker Compose Configuration အဆင့်မြှင့်တင်ခြင်း
+
+Let's Encrypt volumes များကို ထည့်သွင်းရန်အတွက် `/opt/marzban/docker-compose.yml` ဖိုင်ကို ပြင်ဆင်ပါ။
 ```bash
 nano /opt/marzban/docker-compose.yml
 ```
-Under the `volumes` section, ensure `/etc/letsencrypt` is added:
+`volumes` အပိုင်းအောက်တွင် `/etc/letsencrypt` ကို အောက်ပါအတိုင်း ထည့်သွင်းထားကြောင်း သေချာပါစေ။
 ```yaml
 volumes:
   - /var/lib/marzban:/var/lib/marzban
-  - /etc/letsencrypt:/etc/letsencrypt # <--- ADD THIS LINE
+  - /etc/letsencrypt:/etc/letsencrypt # <--- ဤလိုင်းကို ထည့်သွင်းပါ
 ```
 
-### 8. Create Marzban Admin User
+### ၈။ Marzban Admin Account ဖန်တီးခြင်း
+
+Marzban Dashboard ကို စီမံခန့်ခွဲရန် လိုအပ်သော Admin User ကို ဖန်တီးပါ။ ဤ Command သည် အသုံးပြုသူအမည်နှင့် စကားဝှက်ကို မေးမြန်းပါလိမ့်မည်။
 ```bash
 marzban cli admin create --sudo
 ```
-
----
-
-Let me know if you'd like any adjustments or further sections added, like usage instructions, features, or troubleshooting!
