@@ -1,30 +1,23 @@
-# 🚀 Marzban: Censor-ခံနိုင်ရည်ရှိသည့် VPN စီမံခန့်ခွဲမှုစနစ် (GUI)
+# 🚀 Marzban Dashboard Installation ပြုလုပ်နည်း
 
-## မိတ်ဆက်
+## Quick Setup
 
-Marzban သည် Xray-core ကို အခြေခံထားပြီး VPN အသုံးပြုသူများကို စနစ်တကျ စီမံခန့်ခွဲနိုင်ရန် ဖန်တီးထားသည့် ခေတ်မီပြီး အားကောင်းသော Dashboard တစ်ခု ဖြစ်ပါသည်။ ဤစနစ်သည် တစ်ဦးချင်းဖြစ်စေ၊ အဖွဲ့အစည်းလိုက်ဖြစ်စေ VPN Service ပေးလိုသူများအတွက် လွယ်ကူမြန်ဆန်သော တပ်ဆင်မှုနှင့် စီမံခန့်ခွဲမှုကို ပံ့ပိုးပေးပါသည်။ Censor-ခံနိုင်ရည်ရှိသည့် ဝန်ဆောင်မှုများကို အသုံးပြုသူများဆီသို့ လွယ်ကူစွာ ပေးစွမ်းနိုင်သော ဖြေရှင်းချက်တစ်ခုလည်း ဖြစ်ပါသည်။
-
-## အမြန်တပ်ဆင်နည်း (Quick Setup)
-
-Marzban ကို လျင်မြန်စွာ စတင်အသုံးပြုနိုင်ရန် အောက်ပါအဆင့်များကို လိုက်နာပါ။
+Marzban ကို လျင်မြန်စွာ စတင်အသုံးပြုနိုင်ရန် အောက်ပါအဆင့်များကို ပြုလုပ်ပါ။
 
 ### ၁။ System Update ပြုလုပ်ခြင်း
 
-ပထမဆုံးအနေဖြင့် သင့် Server ကို Update နှင့် Upgrade ပြုလုပ်ပါ။
 ```bash
 sudo apt update && sudo apt upgrade -y
 ```
 
-### ၂။ Marzban တပ်ဆင်ခြင်း
+### ၂။ Marzban Install ခြင်း
 
-အောက်ပါ Command ဖြင့် Marzban ကို တပ်ဆင်ပါ။
 ```bash
 sudo bash -c "$(curl -sL https://github.com/Gozargah/Marzban-scripts/raw/master/marzban.sh)" @ install
 ```
 
 ### ၃။ Certbot (SSL အတွက်) တပ်ဆင်ခြင်း
 
-SSL လက်မှတ်များရယူရန်အတွက် Certbot ကို တပ်ဆင်ပါ။
 ```bash
 sudo apt install certbot -y
 ```
@@ -52,7 +45,6 @@ UVICORN_SSL_KEYFILE = "/etc/letsencrypt/live/vpn.yourdomain.com/privkey.pem"
 
 ### ၆။ Let's Encrypt လက်မှတ်များအတွက် Permissions သတ်မှတ်ခြင်း
 
-Let's Encrypt လက်မှတ်ဖိုင်များ၏ Permissions များကို အောက်ပါအတိုင်း သတ်မှတ်ပေးပါ။
 ```bash
 chmod -R 755 /etc/letsencrypt/live/
 chmod -R 755 /etc/letsencrypt/archive/
