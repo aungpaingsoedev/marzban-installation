@@ -79,4 +79,8 @@ https://vpn.yourdomain.com:8000/dashboard
 
 ### ၁၀။ Marzban Dashboard Login UI 
 
+<img src="marzban-login-ui.png" width="800"/>
+
+### ၁၁။ Marzban Dashboard UI 
+
 <img src="marzban-dashboard-ui.png" width="800"/>
