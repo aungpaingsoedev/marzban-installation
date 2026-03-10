@@ -70,14 +70,20 @@ Marzban Dashboard ကို စီမံခန့်ခွဲရန် လို
 marzban cli admin create --sudo
 ```
 
-### ၉။ Marzban Dashboard သို့ Login ဝင်ခြင်း 
+### ၉။ Marzban ကို Restart ချခြင်း
+
+```bash
+marzban restart
+```
+
+### ၁၀။ Marzban Dashboard သို့ Login ဝင်ခြင်း 
 
 Brower ကိုဖွင့်ပြီးအောက်ပါလင့်ကိုရိုက်ရှာပါ။ (vpn.yourdomain.com နေရာတွင် မိမိ Domain အစားထိုးသုံးပါ) 
 ```bash
 https://vpn.yourdomain.com:8000/dashboard
 ```
 
-### ၁၀။ Marzban Dashboard Login UI 
+### ၁၁။ Marzban Dashboard Login UI 
 
 <img src="marzban-login-ui.png" width="800"/>
 
