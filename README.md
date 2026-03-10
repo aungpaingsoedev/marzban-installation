@@ -1,16 +1,14 @@
 # 🚀 Marzban Dashboard Installation ပြုလုပ်နည်း
 
-## Quick Setup
+## Marzban ကို လွယ်ကူလျှင်မြန်စွာ သွင်းရန် အောက်ပါအဆင့်များကို ပြုလုပ်ပါ။
 
-Marzban ကို လွယ်ကူလျှင်မြန်စွာ သွင်းရန် အောက်ပါအဆင့်များကို ပြုလုပ်ပါ။
-
-⚡ Quick Setup (Command တစ်ကြောင်းတည်းဖြင့် သွင်းရန်)
+###⚡ Quick Setup (Command တစ်ကြောင်းတည်းဖြင့် သွင်းရန်)
 
 ```base 
 curl -sSL https://raw.githubusercontent.com/aungpaingsoedev/marzban-setup/main/install.sh | bash
 ```
 
-🛠 Manual (Step-by-Step) တပ်ဆင်နည်း
+### 🛠 Manual (Step-by-Step) တပ်ဆင်နည်း
 
 ### ၁။ System Update ပြုလုပ်ခြင်း
 
